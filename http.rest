@@ -1,0 +1,57 @@
+@baseUrl=http://localhost:3300/user
+
+###signing up user###
+###
+POST {{baseUrl}}/signup
+Content-Type: application/json
+
+{
+    "username":"vaibhav075",
+    "password":"1234567",
+    "email":"vaibhav@gmail1.com",
+    "role":"admin"
+}
+
+###login ###
+###
+POST {{baseUrl}}/login
+Content-Type: application/json
+Authorization:
+
+{ 
+    "email":"vaibhav@gmail1.com",
+    "password":"1234567"
+}
+
+### login through token ###
+###
+POST {{baseUrl}}/login
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiJ9.dmFpYmhhdkBnbWFpbDEuY29t.RloeC3osyf40ssoXwRs5qQpOeUsZWlV9AEHgQjTAbPk
+
+{
+    "email":"vaibhav@gmail1.com"
+}
+
+### forgot password using otp ###
+###
+POST {{baseUrl}}/forgotPassword
+Content-Type: application/json
+
+{
+    "phone":918826891859,
+   "email":"vaibhav@gmail.com"
+}
+
+### update password using otp ###
+###
+POST {{baseUrl}}/updatePassword
+Content-Type: application/json
+
+{
+    "otp":"547105",
+    "password":"hhhh",
+    "email":"vaibhav@gmail1.com"
+}
+
+
